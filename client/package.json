@@ -1,0 +1,21 @@
+{
+  "name": "hermes_client",
+    "version": "0.0.1",
+    "description": "",
+    "private": true,
+    "scripts": {
+      "test": "echo \"No test suite\" && exit 1",
+      "build": "webpack --mode=production",
+      "watch": "webpack --watch --mode=development"
+    },
+    "keywords": [],
+    "author": "David Allen",
+    "license": "Creative Commons 4.0",
+  "dependencies": {
+    "redux": "^4.0.1"
+  },
+  "devDependencies": {
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3"
+  }
+}
