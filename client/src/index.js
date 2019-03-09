@@ -1,8 +1,9 @@
-import { createStore } from 'redux';
+import Hermes from './hermes_core'
 
-const store = createStore(
-  () => {},
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
+Hermes.subscribe((message) => {
+  console.log('SUBSCRIBER 1: ', message.type);
+});
 
-console.log('tada!', store);
+for (let i = 0; i < 10; i++) {
+  Hermes.dispatch({ type: `HELLO_WORLD! ${i}` });
+}
