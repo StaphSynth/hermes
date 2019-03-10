@@ -15,7 +15,7 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         subscribers: [...subscribers, payload]
-      }
+      };
     default:
       return state;
   }

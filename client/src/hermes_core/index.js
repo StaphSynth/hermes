@@ -1,5 +1,5 @@
 import { createStore } from 'redux';
-import reducer from './reducers.js';
+import reducer from './reducer.js';
 import * as actionTypes from './action_types.js';
 
 const store = createStore(
