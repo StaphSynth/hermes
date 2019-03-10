@@ -1,9 +1,32 @@
 import Hermes from './hermes_core'
 
-Hermes.subscribe((message) => {
-  console.log('SUBSCRIBER 1: ', message.type);
+const billboard = document.querySelector('.billboard');
+const input = document.querySelector('.input');
+const messageType = 'BILLBOARD_MESSAGE';
+
+const handleMessage = ({ type, payload }) => {
+  if (type !== messageType) return;
+
+  updateBillboard(payload);
+};
+
+const updateBillboard = (payload) => {
+  billboard.textContent = payload;
+};
+
+const postMessage = (message) => {
+  Hermes.dispatch({
+    type: messageType,
+    payload: message
+  });
+};
+
+Hermes.subscribe(handleMessage);
+
+input.addEventListener('keyup', event => {
+  postMessage(event.target.value);
 });
 
-for (let i = 0; i < 10; i++) {
-  Hermes.dispatch({ type: `HELLO_WORLD! ${i}` });
-}
+Hermes.dispatch({
+  type: 'BILLBOARD_READY'
+});
