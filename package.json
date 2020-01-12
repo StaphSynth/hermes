@@ -7,7 +7,7 @@
     "test": "echo \"No test suite\" && exit 1",
     "build": "webpack --mode=production",
     "watch": "webpack --watch --mode=development",
-    "start": "webpack-dev-server --open"
+    "start": "webpack-dev-server"
   },
   "keywords": [],
   "author": "David Allen",
